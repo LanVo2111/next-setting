@@ -1,0 +1,51 @@
+.header {
+  border-bottom: 1px solid #DBDBDB;
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+  }
+  &_icon {
+    display: flex;
+    gap: 14px;
+  }
+}
+
+.is-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 333;
+  background-color: #fff;
+  box-shadow: #121212;
+}
+
+.navbar {
+  display: flex;
+  gap: 52px;
+}
+.nav-link {
+  text-transform: uppercase;
+  color: #D49696;
+  font-size: 18px;
+}
+
+.bag-icon {
+  position: relative;
+  .cart-number {
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    font-size: 14px;
+    background-color: rgba(220, 18, 18, 0.8666666667);
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

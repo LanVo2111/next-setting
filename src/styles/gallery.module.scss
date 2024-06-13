@@ -1,0 +1,114 @@
+.wrap-top {
+  max-width: 450px;
+  text-align: center;
+  margin: auto;
+}
+.title {
+  font-size: 46px;
+  font-weight: 500;
+  line-height: 56px;
+  letter-spacing: -1.38px;
+  margin-bottom: 16px;
+}
+
+.txt {
+  color: #505050;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.36px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.tab-item {
+  border-radius: 32px;
+  border: 1px solid #DBDBDB;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  span {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -.4px;
+    line-height: 28px;
+  }
+  svg {
+    margin-right: 14px;
+    width: 24px;
+    height: 24px;
+  }
+  &.active, &:hover {
+    border: 1px solid #5C59D4;
+    background: #EDEDFF;
+    span {
+      color: #5C59D4;
+    }
+    path {
+      stroke: #5C59D4;
+    }
+  }
+  // &:hover {
+  //   border: 1px solid #5C59D4;
+  //   background: #EDEDFF;
+  // }
+}
+
+.gallery {
+  // margin: 116px 0 0px;
+  &_list {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 5vw);
+    grid-gap: 15px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &_item {
+    &-1 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+    &-2 {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+    &-3 {
+      grid-column-start: 5;
+      grid-column-end: 8;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+    &-4 {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 5;
+      grid-row-end: 9;
+    }
+    &-5 {
+      grid-column-start: 4;
+      grid-column-end: 6;
+      grid-row-start: 5;
+      grid-row-end: 9;
+    }
+    &-6 {
+      grid-column-start: 6;
+      grid-column-end: 8;
+      grid-row-start: 5;
+      grid-row-end: 9;
+    }
+  }
+}
