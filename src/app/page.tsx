@@ -1,7 +1,5 @@
 "use client"
 import CardList from '@/components/card-list'
-import Gallery from '@/components/gallery'
-
 import { useGetProductListQuery } from '@/utils/fetch'
 import styles from './page.module.css'
 import { Feature } from '@/components/feature'

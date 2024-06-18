@@ -1,7 +1,5 @@
 "use client"
 import Image from "next/image"
-import { Metadata, ResolvingMetadata } from "next"
-
 import { Loading } from "@/components/loading"
 import { TabDetail } from "@/components/tab-detail"
 import { RelatedProduct } from "@/components/related-product"
@@ -16,27 +14,6 @@ type Props = {
   params: { id: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }
- 
-// export async function generateMetadata(
-//   { params, searchParams }: Props,
-//   parent: ResolvingMetadata
-// ): Promise<Metadata> {
-//   // read route params
-//   const id = params.id
- 
-//   // fetch data
-//   const product = await fetch(`http://localhost:3010/product/${id}`).then((res) => res.json())
- 
-//   // optionally access and extend (rather than replace) parent metadata
-//   // const previousImages = (await parent).openGraph?.images || []
- 
-//   return {
-//     title: product.title,
-//     openGraph: {
-//       images: ['/some-specific-page-image.jpg'],
-//     },
-//   }
-// }
 
 export default function ProductDetail({ params }: Props) {
   const id = params.id;

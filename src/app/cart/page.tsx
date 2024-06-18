@@ -10,19 +10,19 @@ import { Dialog } from '@/components/dialog'
 
 
 export default function Cart() {
-  const cartData = useAppSelector(state => state.cart.cartData)
+  const cartData = useAppSelector<any>(state => state.cart.cartData)
   const [open, setOpen] = useState(false)
   
   const getTotalQuantity = () => {
     let total = 0
-    cartData.forEach(item => {
+    cartData.forEach((item: { quantity: number }) => {
       total += item.quantity
     })
     return total
   }
   const getTotalPrice = () => {
     let totalPrice = 0
-    cartData.forEach(item => {
+    cartData.forEach((item: { price: string; quantity: number }) => {
       totalPrice += (parseDataToNumber(item.price) * item.quantity)
     })
     return totalPrice
@@ -50,7 +50,7 @@ export default function Cart() {
     dispatch(removeItemCart(id))
   }
 
-  
+  console.log('cartData', cartData)
   return (
     <div className="cart">
       <div className='inner'>
@@ -59,7 +59,7 @@ export default function Cart() {
             {cartData.map((cartItem: CartItemType) => (   
               <li className={styles.cart_item} key={cartItem.id}>
                 <div className={styles['image-cart']}>
-                  <Image src={'/assets/products/product-1.png'} alt={cartItem.title} width={80} height={80} />
+                  <Image src={`http://localhost:3010/${cartItem.image}`} alt={cartItem.title} width={80} height={80} />
                 </div>
                 <p className={styles['price-item']}>${cartItem.price}</p>
                 <div className={styles.quantity}>

@@ -6,6 +6,7 @@ import Footer from '@/components/footer'
 import ReduxProvider from '@/provider'
 import { Metadata } from 'next'
 import ErrorBoundary from '@/components/error-boundary'
+import ScrollToTopButton from '@/components/scrollToTop'
 
 
 const openSans = Prata({ subsets: ['latin'], weight: '400' })
@@ -37,6 +38,7 @@ export default function RootLayout({
           {/* <ErrorBoundary> */}
             {children}
           {/* </ErrorBoundary> */}
+          <ScrollToTopButton />
           <Footer />
         </ReduxProvider>
 

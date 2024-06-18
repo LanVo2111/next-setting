@@ -1,11 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination} from 'swiper/modules';
 import styles from '../styles/home.module.scss'
-
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -13,14 +10,13 @@ export const Slider = () => {
   return (
     <section className='home-slider'>
       <Swiper
+        modules={[Navigation, Pagination, Scrollbar]}
         className={styles.swiper}
-        modules={[Navigation, Pagination]}
         spaceBetween={0}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        // scrollbar={{ draggable: true }}
-        autoplay={false}
+        scrollbar={{ draggable: true }}
       >
         <SwiperSlide className={styles['slide']}>
           <Image src={'/assets/banner-large-image1.png'} width={1200} height={800} alt='Summer glow' priority />

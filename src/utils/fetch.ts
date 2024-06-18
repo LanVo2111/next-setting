@@ -77,13 +77,6 @@ export const api = createApi({
     }),
     getProductDetail: builder.query({
       query: (id: number | string) => `product/${id}`,
-      // serializeQueryArgs: ({ queryArgs, endpointDefinition, endpointName }) => {
-      //   const id = queryArgs;
-      //   return { id };
-      // },
-      // forceRefetch({ currentArg, previousArg }) {
-      //   return currentArg !== previousArg;
-      // },
     }),
     getRelatedProduct: builder.query({
       query: (id: number | string) => `product/related/${id}`,

@@ -14,18 +14,10 @@ export default function CardList({ products, isLoading }: CardProductProps) {
   const [id, setId] = useState(1)
   const { data: categories } = useGetCategoriesListQuery('categories')
   const { data: productCate } = useGetProductByCategoriesQuery(id)
-  const [dataRender, setDataRender] = useState(products)
-
   const ref = useRef(null);
 
   const clickToRenderProduct = (id: number) => {
     setId(id)
-    if (id === 0) {
-      setDataRender(products)
-    }
-    else {
-      setDataRender(productCate)
-    }
   }
 
   return (
@@ -38,11 +30,8 @@ export default function CardList({ products, isLoading }: CardProductProps) {
           <div className={styles['left-side']}>
             <h3>BROWSE BY CATEGORIES</h3>
             <ul>
-              <li onClick={() => clickToRenderProduct(0)}>
-                <span>All</span>
-              </li>
               {categories?.map((cateItem: CategoryType) => (
-                <li key={cateItem.id} onClick={() => clickToRenderProduct(cateItem.id)}>
+                <li key={cateItem.id} onClick={() => clickToRenderProduct(cateItem.id)} className={cateItem.id === id ? styles['active']: ''}>
                   <span >{cateItem.category}</span>
                 </li>
               ))}
@@ -54,13 +43,13 @@ export default function CardList({ products, isLoading }: CardProductProps) {
                 (
                   <>
                     <ul className={styles['card-list']}>
-                      {dataRender?.map((cardItem: CardItemType) => (
+                      {productCate?.map((cardItem: CardItemType) => (
                         <CardItem key={cardItem.id} {...cardItem} />
                       ))}
                     </ul>
                   </>
                 )
-            }
+              }
           </div>
         </div>
       </div>
